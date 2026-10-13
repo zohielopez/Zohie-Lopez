@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Zohie Lopez — Fashion Merchandising student at TCU. Styling, creative direction, marketing, and product portfolio.">
+<meta property="og:title" content="Zohie Lopez Portfolio">
+<meta property="og:description" content="Styling, creative direction, marketing, and product work by Zohie Lopez.">
+<meta property="og:image" content="images/city-boots-04.jpg">
+<title>Zohie Lopez Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: fashion-editorial magazine. Asymmetric 12-col grids, image-led stories, type carries hierarchy, no cards. Single light look by design. */
+:root{
+  --ivory:#F6F2EA; --paper:#ECE5D8; --ink:#16130F; --char:#3B3630; --stone:#7E766A; --line:#D8CFBF; --accent:#8A5646;
+  --t1:#E4DBCB; --t2:#D5C9B5; --t3:#C1B39C; --t4:#2C2824;
+  --display:'Bodoni Moda','Didot','Bodoni 72',Georgia,serif;
+  --body:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  --mono:'DM Mono',ui-monospace,Menlo,monospace;
+  --gut:clamp(16px,4.5vw,64px);
+  color-scheme:light;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:inherit}
+:focus-visible{outline:1.5px solid var(--accent);outline-offset:3px}
+.wrap{padding-inline:var(--gut);max-width:1440px;margin-inline:auto}
+.sec{padding-block:clamp(56px,9vw,128px)}
+.sec.tight{padding-block:clamp(36px,5vw,64px)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);margin:0 0 18px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.05}
+h3{font-size:clamp(1.35rem,2.2vw,1.75rem);line-height:1.15}
+em{font-style:italic}
+p{margin:0;max-width:62ch}
+.lede{font-family:var(--display);font-size:clamp(1.3rem,2.3vw,1.85rem);line-height:1.35;max-width:34ch;text-wrap:pretty}
+.body{color:var(--char)}
+.body p+p{margin-top:1em}
+.ph{color:var(--stone);font-style:italic;font-family:var(--body)}
+.lede .ph{font-family:var(--display)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--ivory) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:62px;gap:16px}
+.brand{font-family:var(--display);font-size:clamp(17px,2vw,21px);text-decoration:none;white-space:nowrap}
+.brand em{color:var(--accent)}
+.nav ul{display:flex;gap:clamp(14px,3vw,40px);list-style:none;margin:0;padding:0}
+.nl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--char);text-decoration:none;padding-block:6px;border-bottom:1px solid transparent;transition:border-color .3s}
+.nl:hover{border-color:var(--line)}
+.nl[aria-current="page"]{border-color:var(--ink);color:var(--ink)}
+
+/* image frames */
+.img{position:relative;margin:0;overflow:hidden;max-width:100%;width:100%;display:flex;align-items:flex-end;background:var(--t2)}
+.img::before{content:"";position:absolute;inset:0;background:inherit;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.img::after{content:"";position:absolute;inset:10px;border:1px solid color-mix(in srgb,var(--ink) 9%,transparent);pointer-events:none}
+.img span{position:relative;z-index:1;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--char);padding:18px 20px;opacity:.8;line-height:1.5}
+.img video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+a:hover .img::before,.img:hover::before,a:hover .img img,.img:hover img{transform:scale(1.035)}
+.t-a{background:var(--t1)}.t-b{background:var(--t2)}.t-c{background:var(--t3)}.t-d{background:var(--t4)}
+.t-d span{color:var(--t2)} .t-d::after{border-color:color-mix(in srgb,var(--ivory) 14%,transparent)}
+figcaption,.cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-top:12px}
+
+/* page motion */
+.page{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.page{animation:none}.img::before,.img img{transition:none}html{scroll-behavior:auto}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--ink);padding-block:6px;background:none;border-top:0;border-left:0;border-right:0;cursor:pointer}
+.btn::after{content:"→";transition:transform .35s}
+.btn:hover::after{transform:translateX(5px)}
+
+/* home */
+.hero{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,3vw,40px);padding-block:clamp(40px,7vw,96px) clamp(48px,7vw,96px);align-items:end}
+.hero-text{grid-column:1/8;min-width:0}
+.hero .img{grid-column:8/13}
+.name{font-size:clamp(4rem,13.5vw,12.5rem);line-height:.86;letter-spacing:-.035em;margin-bottom:clamp(24px,3vw,40px)}
+.name em{display:block;padding-left:.55em;color:var(--accent)}
+.desc{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--char);margin-bottom:22px}
+.hero .intro{font-size:1.06rem;color:var(--char);max-width:44ch;margin-bottom:28px}
+.credits{border-block:1px solid var(--line);overflow:hidden}
+.credits ul{display:flex;flex-wrap:wrap;gap:10px 36px;list-style:none;margin:0;padding-block:18px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--char)}
+.credits li{display:flex;gap:36px;white-space:nowrap}
+.credits li:not(:last-child)::after{content:"/";color:var(--line)}
+.sel-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,64px)}
+.sel{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,3vw,40px) clamp(16px,2.5vw,32px)}
+.sel .s1{grid-column:1/8}.sel .s2{grid-column:9/13;margin-top:22%}.sel .s3{grid-column:2/7}.sel .s4{grid-column:8/13;margin-top:-12%}
+.tile{text-decoration:none;display:block;min-width:0}
+.tile-meta{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.tile-meta h3{font-size:clamp(1.25rem,2vw,1.6rem)}
+.tile-meta span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);text-align:right}
+.skills{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,80px);border-top:1px solid var(--line)}
+.skill-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.skill-cols ul{list-style:none;margin:0;padding:0}
+.skill-cols li{font-family:var(--display);font-size:1.25rem;padding-block:9px;border-bottom:1px solid var(--line)}
+.cta{background:var(--ink);color:var(--ivory)}
+.cta .wrap{display:grid;gap:28px}
+.cta h2{font-size:clamp(2.8rem,9vw,8rem);line-height:.95;letter-spacing:-.03em}
+.cta h2 em{color:#C79E8E}
+.cta .eyebrow{color:#A49A8B}
+.cta .btn{color:var(--ivory);border-color:var(--ivory)}
+.cta-row{display:flex;gap:28px 48px;flex-wrap:wrap;align-items:center}
+.cta-mail{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:#D9D0C2;user-select:all;word-break:break-all}
+
+/* work index */
+.page-head{padding-block:clamp(40px,7vw,96px) clamp(24px,4vw,48px);display:grid;gap:22px}
+.page-head h1{font-size:clamp(3.4rem,10vw,9rem);line-height:.9;letter-spacing:-.035em}
+.page-head h1 sup{font-family:var(--mono);font-size:12px;letter-spacing:.1em;vertical-align:top;margin-left:10px;color:var(--stone)}
+.filters{display:flex;flex-wrap:wrap;gap:10px 26px;border-block:1px solid var(--line);padding-block:16px}
+.filters button{background:none;border:0;padding:4px 0;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);border-bottom:1px solid transparent}
+.filters button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.idx{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(36px,5vw,72px) clamp(16px,2.5vw,32px);padding-block:clamp(40px,6vw,80px) clamp(64px,9vw,128px)}
+.idx .p0{grid-column:1/8}.idx .p1{grid-column:9/13;margin-top:18%}.idx .p2{grid-column:1/6}.idx .p3{grid-column:7/13}.idx .p4{grid-column:2/8}.idx .p5{grid-column:9/13;margin-top:10%}
+
+/* case studies */
+.case-head{padding-block:clamp(40px,7vw,96px) clamp(32px,4vw,56px)}
+.case-title{font-size:clamp(3rem,9vw,8rem);line-height:.92;letter-spacing:-.035em;margin-bottom:clamp(28px,4vw,52px)}
+.case-title em{display:block;font-size:.42em;letter-spacing:-.01em;color:var(--accent);margin-top:.35em}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;border-top:1px solid var(--ink);padding-top:16px;margin:0}
+.meta dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
+.meta dd{margin:0;font-size:.98rem}
+.split{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(20px,4vw,64px);border-top:1px solid var(--line)}
+.split>div{min-width:0}
+.role{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(20px,4vw,56px)}
+.role li{padding-block:14px;border-bottom:1px solid var(--line);font-size:1.02rem}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid var(--ink);padding-top:14px}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent);margin-bottom:10px}
+.steps b{display:block;font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1.2;margin-bottom:6px}
+.steps p{font-size:.92rem;color:var(--char)}
+.asym{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(28px,4vw,56px) clamp(16px,2.5vw,32px)}
+.asym .a1{grid-column:1/8}.asym .a2{grid-column:9/13;margin-top:26%}.asym .a3{grid-column:2/6}.asym .a4{grid-column:7/13;margin-top:-8%}.asym .a5{grid-column:1/13}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,24px)}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,2vw,24px)}
+.quad{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,24px)}
+.looks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(20px,4vw,56px);margin:0}
+.looks div{display:grid;grid-template-columns:90px minmax(0,1fr);gap:16px;padding-block:16px;border-bottom:1px solid var(--line)}
+.looks dt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);padding-top:3px}
+.looks dd{margin:0}
+.bignum{font-family:var(--display);font-size:clamp(6rem,20vw,16rem);line-height:.8;letter-spacing:-.05em;color:var(--accent)}
+.statband{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(24px,4vw,64px);align-items:end}
+.next{display:block;text-decoration:none;border-top:1px solid var(--ink);padding-block:clamp(36px,6vw,72px)}
+.next h2{font-size:clamp(2.6rem,8vw,6.5rem);letter-spacing:-.03em;transition:color .3s}
+.next:hover h2{color:var(--accent)}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;border-top:1px solid var(--ink)}
+table{width:100%;border-collapse:collapse;min-width:560px;font-variant-numeric:tabular-nums}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:400;text-align:left;padding:14px 16px 14px 0;border-bottom:1px solid var(--line)}
+td{padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;font-size:.95rem}
+td:first-child{font-family:var(--mono);font-size:12px;color:var(--accent);white-space:nowrap}
+
+/* strategy */
+.chapters{display:flex;flex-wrap:wrap;gap:8px 22px;padding-block:16px;border-bottom:1px solid var(--line)}
+.chapters button{background:none;border:0;padding:2px 0;cursor:pointer;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--char)}
+.chapters button:hover{color:var(--accent)}
+.swot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ink)}
+.swot div{padding:22px 22px 26px 0;border-bottom:1px solid var(--line);min-height:150px}
+.swot div:nth-child(odd){border-right:1px solid var(--line)}
+.swot div:nth-child(even){padding-left:22px}
+.swot h3{font-size:1.5rem;margin-bottom:10px}
+.insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.insights div{border-top:1px solid var(--ink);padding-top:16px}
+.insights q{display:block;font-family:var(--display);font-size:1.35rem;line-height:1.3;quotes:none;margin-bottom:12px}
+.recs{list-style:none;margin:0;padding:0;counter-reset:r}
+.recs li{counter-increment:r;display:grid;grid-template-columns:80px minmax(0,1fr);gap:20px;padding-block:22px;border-bottom:1px solid var(--line)}
+.recs li::before{content:counter(r,decimal-leading-zero);font-family:var(--display);font-size:2.4rem;line-height:1;color:var(--accent)}
+.tagline{font-family:var(--display);font-style:italic;font-size:clamp(2.4rem,6.5vw,5.5rem);line-height:1;letter-spacing:-.02em;color:var(--stone);max-width:16ch}
+
+/* data */
+.profile{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);align-items:center}
+.handle{font-family:var(--display);font-size:clamp(2.2rem,5vw,4rem);line-height:1;margin-bottom:22px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink)}
+.stats div{padding:20px 16px 20px 0;border-bottom:1px solid var(--line)}
+.stats b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(2rem,4vw,3.2rem);line-height:1;color:var(--stone);font-variant-numeric:tabular-nums}
+.stats span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.bars{display:grid;gap:14px;max-width:760px}
+.bar{display:grid;grid-template-columns:80px minmax(0,1fr) 70px;gap:16px;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--char)}
+.bar i{display:block;height:10px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 10px)}
+.bar em{color:var(--stone);text-align:right}
+
+/* palette */
+.palette{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(8px,1.5vw,16px)}
+.chip{aspect-ratio:3/4;display:flex;align-items:flex-end;padding:12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.chips{display:flex;gap:6px;margin-top:16px}
+.chips i{width:28px;height:28px;display:block;border:1px solid color-mix(in srgb,var(--ink) 10%,transparent)}
+.deliv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.5vw,32px)}
+.deliv div{border-top:1px solid var(--ink);padding-top:14px}
+.deliv b{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:10px}
+.line{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,2.5vw,32px) clamp(12px,2vw,24px)}
+.line p{font-size:.88rem;margin-top:10px;color:var(--char)}
+.line p b{font-weight:500;color:var(--ink);display:block}
+
+/* graphic design */
+.prog{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);border-top:1px solid var(--ink);padding-top:clamp(24px,3vw,40px)}
+.prog h2{font-size:clamp(2.4rem,5vw,4.2rem);line-height:1}
+.prog h2 small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.prog .tags{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--char)}
+.prog-imgs{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(12px,2vw,20px)}
+.prog-imgs .full{grid-row:span 2}
+
+/* mood boards */
+.board{display:grid;grid-template-columns:minmax(0,9fr) minmax(0,3fr);gap:clamp(20px,3vw,48px);align-items:end}
+.board.flip{grid-template-columns:minmax(0,3fr) minmax(0,9fr)}
+.board.flip .board-text{order:-1}
+.board-text h3{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:12px}
+.board-text dl{margin:18px 0 0;display:grid;gap:12px}
+.board-text dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+.board-text dd{margin:2px 0 0}
+
+/* about / contact */
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,80px);align-items:start}
+.cv{display:grid;gap:clamp(36px,5vw,56px)}
+.cv-row{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:20px;border-top:1px solid var(--line);padding-top:16px}
+.cv-row ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.cv-row li b{font-weight:500}
+.contact-big{font-size:clamp(3.2rem,11vw,10rem);line-height:.9;letter-spacing:-.04em}
+.contact-big em{color:var(--accent)}
+.clist{border-top:1px solid var(--ink);margin-top:clamp(40px,6vw,72px)}
+.clist div{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,7fr) auto;gap:20px;align-items:center;padding-block:22px;border-bottom:1px solid var(--line)}
+.clist dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+.clist dd{margin:0;font-family:var(--display);font-size:clamp(1.2rem,2.6vw,2rem);min-width:0;overflow-wrap:anywhere}
+.copy{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;background:none;border:1px solid var(--line);padding:8px 12px;cursor:pointer;color:var(--char)}
+.copy:hover{border-color:var(--ink)}
+
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:28px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+
+@media (max-width:820px){
+  .hero-text,.hero .img{grid-column:1/-1}
+  .hero .img{max-width:520px}
+  .sel .s1,.sel .s2,.sel .s3,.sel .s4,.idx>*,.asym>*{grid-column:1/-1!important;margin-top:0!important}
+  .skills,.split,.profile,.about,.statband,.prog,.board,.board.flip,.cv-row{grid-template-columns:minmax(0,1fr)}
+  .board.flip .board-text{order:0}
+  .meta,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .role,.looks,.insights,.deliv,.swot{grid-template-columns:minmax(0,1fr)}
+  .swot div{border-right:0!important;padding-left:0!important;min-height:0}
+  .trio,.quad,.line{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .palette{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .prog-imgs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.prog-imgs .full{grid-column:1/-1;grid-row:auto}
+  .clist div{grid-template-columns:minmax(0,1fr) auto}.clist dt{grid-column:1/-1}
+}
+@media (max-width:460px){
+  .trio{grid-template-columns:minmax(0,1fr)}
+  .skill-cols{grid-template-columns:minmax(0,1fr)}
+  .looks div,.recs li{grid-template-columns:64px minmax(0,1fr)}
+  .bar{grid-template-columns:62px minmax(0,1fr) 50px}
+}
+/* personal style: magazine-scrapbook columns at natural ratios */
+.ps{columns:4 220px;column-gap:clamp(12px,2vw,24px)}
+.ps figure{margin:0 0 clamp(12px,2vw,24px);break-inside:avoid}
+.ps .img{aspect-ratio:auto!important;display:block}
+.ps .img img{position:relative;z-index:1;height:auto;display:block}
+.ps .img::before{display:none}
+/* funnel, budget bars, path */
+.funnel{list-style:none;margin:0;padding:0;display:grid;gap:clamp(10px,1.5vw,16px)}
+.funnel li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,3vw,48px);align-items:center}
+.f-band{width:var(--w);margin-inline:auto;background:var(--ink);color:var(--ivory);padding:clamp(18px,2.4vw,28px) 22px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.funnel li:nth-child(2) .f-band{background:var(--char)}.funnel li:nth-child(3) .f-band{background:var(--accent)}
+.f-band span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.f-band b{font-family:var(--display);font-weight:400;font-size:clamp(1.4rem,2.4vw,2rem)}
+.f-body{border-top:1px solid var(--line);padding-top:12px}
+.f-meta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.f-body p+p{margin-top:8px;color:var(--char)}
+.f-kpi span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-right:10px}
+.money{display:grid;gap:18px;border-top:1px solid var(--ink);padding-top:22px}
+.m-row{display:grid;grid-template-columns:90px minmax(0,1fr) 90px;grid-template-areas:"n bar v" ". s s";gap:4px 16px;align-items:center;font-variant-numeric:tabular-nums}
+.m-row span{grid-area:n;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.m-row i{grid-area:bar;height:14px;background:var(--paper);display:block}
+.m-row i em{display:block;height:100%;background:var(--ink)}
+.m-row b{grid-area:v;font-family:var(--display);font-weight:400;font-size:1.35rem;text-align:right}
+.m-row small{grid-area:s;font-family:var(--mono);font-size:10.5px;color:var(--stone);letter-spacing:.08em}
+.path{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 0;align-items:center}
+.path li{font-family:var(--display);font-size:clamp(1.6rem,3.5vw,2.8rem);line-height:1}
+.path li:not(:last-child)::after{content:"→";font-family:var(--body);font-size:.6em;color:var(--accent);margin:0 .5em;vertical-align:middle}
+.path li:last-child{color:var(--accent);font-style:italic}
+.duo.cols{gap:clamp(24px,4vw,64px)}
+.duo.cols h3{font-size:1.6rem}
+@media (max-width:820px){.funnel li{grid-template-columns:minmax(0,1fr)}.f-band{width:100%}.duo.cols,.duo{grid-template-columns:minmax(0,1fr)}}
+.jobs{gap:18px!important}
+.jobs span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-top:3px}
+.jobs p{font-size:.94rem;color:var(--char);margin-top:6px}
+.cv-row a{border-bottom:1px solid var(--ink);text-decoration:none}
+.clist dd a{text-decoration:none;border-bottom:1px solid var(--line)}
+.suite{display:grid;gap:clamp(12px,2vw,20px);min-width:0}
+.suite-row{display:flex;gap:clamp(12px,2vw,20px);align-items:flex-start}
+.suite-row figure{min-width:0}
+@media (max-width:620px){.suite-row{flex-direction:column}.suite-row figure{width:100%}}
+.learned .lede{max-width:46ch}
+/* real-content additions */
+.slide{margin:0}
+.slide .img{background:var(--paper)}
+.slide .img::after{border-color:var(--line);inset:0}
+.asym .a6{grid-column:4/10}
+.sel .s3w{grid-column:1/7}.sel .s4w{grid-column:7/13}
+.stats.real b{color:var(--ink)}
+.stats.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stats small{display:block;font-size:.9rem;color:var(--char);margin-top:8px;font-family:var(--body);letter-spacing:0;text-transform:none}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,40px);margin:0;border-top:1px solid var(--ink)}
+.facts div{padding-block:16px;border-bottom:1px solid var(--line)}
+.facts dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
+.facts dd{margin:0;font-size:1rem}
+.infl{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:start;border-top:1px solid var(--ink);padding-top:clamp(24px,3vw,40px)}
+.infl .handle{font-size:clamp(1.9rem,4vw,3.2rem);overflow-wrap:anywhere}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.ticks li{padding-block:12px;border-bottom:1px solid var(--line)}
+@media (max-width:820px){
+  .sel .s3w,.sel .s4w,.asym .a6{grid-column:1/-1}
+  .facts,.infl{grid-template-columns:minmax(0,1fr)}
+  .stats.three{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+<style>
+/* base reset (the hosted preview supplied these automatically) */
+html,body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#home">Zohie <em>Lopez</em></a>
+    <ul>
+      <li><a class="nl" href="#work" data-nav="work">Work</a></li>
+      <li><a class="nl" href="#about" data-nav="about">About</a></li>
+      <li><a class="nl" href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <span>Zohie Lopez · Fashion Merchandising · TCU</span>
+    <span>Portfolio 2026–27</span>
+  </div>
+</footer>
+
+<script>
+/* ---------- content ----------
+   Every grey frame is a photo slot. To add an image, give that slot a src:
+   img('label','4/5','b','', 'images/runway-01.jpg')
+   Text in [brackets] marks details still to fill in. */
+
+const EMAIL = 'z.j.lopez@tcu.edu';
+const I = n => `images/${n}.jpg`;
+
+const ph  = t => `<span class="ph">[${t}]</span>`;
+const img = (label, r='4/5', t='b', c='', src='', pos='center') =>
+  `<figure class="img t-${t} ${c}" style="aspect-ratio:${r}">${src?`<img src="${src}" alt="${label}" loading="lazy" style="object-position:${pos}">`:`<span>${label}</span>`}</figure>`;
+/* Short looping clip: plays muted on repeat, like a moving photo.
+   vid('label','9/16','videos/runway-walk.mp4','images/runway-walk-poster.jpg') */
+const vid = (label, r='9/16', src, poster='') => img(label, r, 'b', '', poster);  // clips shown as still frames
+const V = n => `videos/${n}.mp4`;
+const slide = (src, alt, cap='') => `<figure class="slide">${img(alt,'16/9','a','',src)}${cap?`<figcaption>${cap}</figcaption>`:''}</figure>`;
+const PORTRAIT = '2/3', SCARF = '1143/1600', MEN = '1206/1596';
+
+const PROJECTS = [
+  {id:'city-boots', title:'CITY Boots', sub:'The Memphis Collection', cat:'styling', catLabel:'Styling & Creative Direction', role:'Stylist', focus:'Styling · Creative direction · Fashion imagery · Execution', tone:'c', ratio:PORTRAIT, cover:I('city-boots-03'), pos:'center 30%'},
+  {id:'kerr-chief', title:'Kerr Chief', sub:'Forty scarves, many looks', cat:'styling', catLabel:'Styling & Creative Direction', role:'Stylist', focus:'Styling · Accessory styling · Creative problem solving', tone:'b', ratio:SCARF, cover:I('kerr-chief-full')},
+  {id:'runway', title:'Runway for a Cure', sub:'National Cowgirl Museum and Hall of Fame', cat:'styling', catLabel:'Event Production', role:'Runway production coordinator', focus:'Fashion show production · Model coordination', tone:'d', ratio:'3/4', cover:I('runway-walk-01'), pos:'center 40%'},
+  {id:'for-love-lemons', title:'For Love & Lemons', sub:'Spring/Summer strategic marketing plan', cat:'marketing', catLabel:'Marketing & Strategy', role:'Strategist', focus:'Campaign planning · Paid social · Budget', tone:'a', ratio:'16/9', cover:I('fll-brief'), team:'Adeline Walker, Natalia Eddy, and Ruby Miller'},
+  {id:'ganni', title:'GANNI', sub:'Join the #GANNIGIRLS', cat:'marketing', catLabel:'Marketing & Strategy', role:'Strategist', focus:'Influencer research · Campaign concept · KPIs', tone:'b', ratio:'16/9', cover:I('ganni-consumer'), team:'McKenna Koecher'},
+  {id:'j-crew', title:'J.Crew', sub:'Western/Americana trend recommendation', cat:'product', catLabel:'Product & Trend', role:'Trend analyst', focus:'Trend forecasting · Product recommendation', tone:'a', ratio:'16/9', cover:I('jcrew-recommendation')},
+  {id:'jcrew-field', title:'J.Crew Field Survey', sub:'In-store consumer behavior, Fort Worth', cat:'product', catLabel:'Retail & Consumer Behavior', role:'Researcher', focus:'Store experience · S-O-R analysis · Visual merchandising', tone:'b', ratio:'16/9', cover:I('jfs-01'), team:'Ava Weill and Julia Salvagio'},
+  {id:'graphic-design', title:'Graphic Design', sub:'Photoshop, Illustrator, InDesign', cat:'design', catLabel:'Graphic Design', role:'Designer', focus:'Illustration · Layout · Typography', tone:'a', ratio:'1165/1800', cover:I('gd-vegas')},
+];
+const byId = Object.fromEntries(PROJECTS.map(p=>[p.id,p]));
+const FILTERS = [['all','All'],['styling','Styling'],['marketing','Marketing'],['product','Product'],['design','Graphic Design']];
+
+const tile = (p, cls='', ratio) => `
+  <a class="tile ${cls}" href="#${p.id}">
+    ${img(p.title+' · cover image', p.cover ? p.ratio : (ratio||p.ratio), p.tone, '', p.cover||'', p.pos||'center')}
+    <div class="tile-meta"><h3>${p.title}</h3><span>${p.catLabel}</span></div>
+  </a>`;
+
+/* ---------- shared case-study parts ---------- */
+const head = (p, year='') => `
+  <header class="case-head wrap">
+    <p class="eyebrow">${p.catLabel}</p>
+    <h1 class="case-title">${p.title}<em>${p.sub}</em></h1>
+    <dl class="meta">
+      <div><dt>Category</dt><dd>${p.catLabel}</dd></div>
+      <div><dt>Year</dt><dd>${['ganni','for-love-lemons'].includes(p.id) ? '2025' : '2026'}</dd></div>
+      <div><dt>My role</dt><dd>${p.role}</dd></div>
+      <div><dt>Focus</dt><dd>${p.focus}</dd></div>
+    </dl>
+    ${p.team?`<p class="cap" style="margin-top:14px">Team project with ${p.team}</p>`:''}
+  </header>`;
+const block = (label, inner, id='') => `<section class="sec wrap"${id?` id="${id}"`:''}><div class="split" style="padding-top:20px"><p class="eyebrow">${label}</p><div>${inner}</div></div></section>`;
+const roleList = items => `<ul class="role">${items.map(i=>`<li>${i}</li>`).join('')}</ul>`;
+const LEARNED = {
+  'city-boots': 'I learned how to create looks based on a concept board, select, eliminate, and tweak looks based on creative collaboration, and what it takes to style a photoshoot through prepping and steaming looks, organizing accessories, temporarily altering the clothing for the models, and helping execute the final images.',
+  'kerr-chief': 'This photoshoot taught me that one piece of fabric can increase the visual interest of an outfit by adding texture and color. In fashion, accessories are multi-purpose, and through creativity, trial and error, and collaboration, I was able to push the envelope to highlight an artist and product that transforms any outfit.',
+  'runway': 'I was involved in every step of producing this event, which raised funds and awareness for a cause that has impacted countless lives. From communicating with event planners and models to developing styled looks, organizing models and outfits on-site, and cueing models during the show, I gained hands-on experience with the many components of producing a runway show from concept to execution.',
+};
+const reflection = id => block('What I learned', `<p class="lede" style="max-width:46ch;font-size:clamp(1.15rem,1.8vw,1.45rem);line-height:1.5">${LEARNED[id]}</p>`);
+const next = id => { const i = PROJECTS.findIndex(p=>p.id===id); const n = PROJECTS[(i+1)%PROJECTS.length];
+  return `<div class="wrap"><a class="next" href="#${n.id}"><p class="eyebrow">Next project</p><h2>${n.title} <em class="ph" style="font-family:var(--display)">→</em></h2></a></div>`; };
+
+/* ---------- pages ---------- */
+const PAGES = {};
+
+PAGES.home = () => `
+  <section class="hero wrap">
+    <div class="hero-text">
+      <p class="eyebrow">Portfolio · Summer 2027 internships</p>
+      <h1 class="name">Zohie<em>Lopez</em></h1>
+      <p class="desc">Fashion Merchandising · Styling · Marketing · Creative Direction</p>
+      <p class="intro">I combine fashion creativity with strategic thinking to create compelling visual, product, and brand experiences.</p>
+      <a class="btn" href="#work">View all work</a>
+    </div>
+    ${img('CITY Boots · denim on denim with red boots', PORTRAIT, 'c', '', I('city-boots-04'))}
+  </section>
+  <div class="credits"><div class="wrap"><ul>
+    ${['CITY Boots','Kerr Chief','Runway for a Cure','For Love & Lemons','GANNI','J.Crew'].map(c=>`<li>${c}</li>`).join('')}
+  </ul></div></div>
+  <section class="sec wrap">
+    <div class="sel-head"><div><p class="eyebrow">Selected work</p><h2>Styling, strategy<br><em>and product</em></h2></div><a class="btn" href="#work">All projects</a></div>
+    <div class="sel">
+      ${tile(byId['city-boots'],'s1')}
+      ${tile(byId['kerr-chief'],'s2')}
+      ${tile(byId['ganni'],'s3w')}
+      ${tile(byId['for-love-lemons'],'s4w')}
+    </div>
+  </section>
+  <section class="sec wrap">
+    <div class="skills" style="padding-top:28px">
+      <div><p class="eyebrow">What I do</p><p class="lede">On set, backstage, and in the strategy deck: I build the look and the reasoning behind it.</p></div>
+      <div class="skill-cols">
+        <ul>${['Styling','Creative direction','Visual storytelling','Fashion show coordination','Accessory styling'].map(s=>`<li>${s}</li>`).join('')}</ul>
+        <ul>${['Brand strategy','Influencer marketing','Retail & consumer research','Trend & consumer insight','Adobe Creative Suite'].map(s=>`<li>${s}</li>`).join('')}</ul>
+      </div>
+    </div>
+  </section>
+  <section class="cta sec"><div class="wrap">
+    <p class="eyebrow">Open to Summer 2027 internships</p>
+    <h2>Let’s create <em>something.</em></h2>
+    <div class="cta-row"><span class="cta-mail">${EMAIL}</span><a class="btn" href="#contact">Get in touch</a></div>
+  </div></section>`;
+
+PAGES.work = (filter='all') => {
+  const list = filter==='all' ? PROJECTS : PROJECTS.filter(p=>p.cat===filter);
+  const ratios = ['4/5','3/4','5/4','4/5','3/2','4/5'];
+  return `
+  <header class="page-head wrap">
+    <p class="eyebrow">Index</p>
+    <h1>Work<sup>(${String(PROJECTS.length).padStart(2,'0')})</sup></h1>
+    <div class="filters" role="group" aria-label="Filter projects">
+      ${FILTERS.map(([k,l])=>`<button type="button" id="f-${k}" data-filter="${k}" aria-pressed="${k===filter}">${l}</button>`).join('')}
+    </div>
+  </header>
+  <section class="wrap"><div class="idx">
+    ${list.map((p,i)=>tile(p,'p'+(i%6),ratios[i%6])).join('')}
+  </div></section>`;
+};
+['styling','marketing','product','design'].forEach(k => PAGES[k] = () => PAGES.work(k));
+
+/* Styling: CITY Boots */
+PAGES['city-boots'] = () => { const p = byId['city-boots']; return `
+  ${head(p)}
+  ${img('Two looks in the garden: red taffeta skirt and suede vest','16/9','c','',I('city-boots-02'),'center 35%')}
+  ${block('Overview', `<p class="lede">As the styling intern at CHIEFFALO Americana, I styled and helped execute a photoshoot for the Memphis Collection by CITY Boots, from the first look concepts through the final frames on shoot day.</p>`)}
+  ${block('My role', roleList(['Created outfit and look concepts','Selected and coordinated accessories','Prepared looks before fittings','Assisted during fittings','Styled on shoot day','Helped execute the final fashion imagery']))}
+  <section class="sec wrap"><div class="split" style="padding-top:20px"><p class="eyebrow">Process</p><div style="display:grid;gap:40px">
+    <ol class="steps">
+      <li><b>Look concepts</b><p>Built each look around the boots, mixing western staples with softer prairie and denim pieces.</p></li>
+      <li><b>Accessory pull</b><p>Bolo ties, tooled and concho belts, and turquoise jewelry to anchor the western story.</p></li>
+      <li><b>Fittings</b><p>Prepared looks ahead of time and adjusted them during fittings.</p></li>
+      <li><b>Shoot day</b><p>Styled on set and helped carry the looks through to final images.</p></li>
+    </ol>
+    <div class="trio">
+      <figure style="margin:0">${vid('Wardrobe rack before fittings','9/16',V('city-boots-rack'),I('city-boots-rack-poster'))}<figcaption>The wardrobe rack, prepped before fittings</figcaption></figure>
+      <figure style="margin:0">${vid('Accessory pull laid out on set','9/16',V('city-boots-accessories'),I('city-boots-accessories-poster'))}<figcaption>The accessory pull: belts, buckles, turquoise, scarves</figcaption></figure>
+      <figure style="margin:0">${img('Gingham shirt, bolo tie and heart buckle','9/16','a','',I('city-boots-detail'))}<figcaption>Detail: bolo tie and heart buckle on Look 01</figcaption></figure>
+    </div>
+    <figure style="margin:0">${img('On set: crew shooting in the garden','3/2','b','',I('city-boots-bts-set'))}<figcaption>On set with the crew</figcaption></figure>
+  </div></div></section>
+  <section class="sec wrap"><p class="eyebrow">Final work</p><div class="asym">
+    <div class="a1">${img('Gingham snap shirt and prairie skirt; olive satin western shirt',PORTRAIT,'b','',I('city-boots-01'),'center 20%')}</div>
+    <div class="a2">${img('Burgundy fringe suede with ivory boots',PORTRAIT,'a','',I('city-boots-03'))}<p class="cap">Fringe suede layered over denim, finished with ivory boots</p></div>
+    <div class="a6">${img('Denim on denim with turquoise and red boots',PORTRAIT,'c','',I('city-boots-04'))}<p class="cap">Squash blossom necklace and concho belt over double denim</p></div>
+  </div></section>
+  ${block('Styling details', `<dl class="looks">
+    <div><dt>Look 01</dt><dd>Gingham western snap shirt, bolo tie, tooled belt with heart buckle, tiered prairie skirt, straw hat</dd></div>
+    <div><dt>Look 02</dt><dd>Olive satin western shirt, bolo tie, wide-leg indigo trousers</dd></div>
+    <div><dt>Look 03</dt><dd>Striped bow blouse, red taffeta skirt, tall red boots</dd></div>
+    <div><dt>Look 04</dt><dd>Eyelet blouse with floral ruffle trim, suede vest, light-wash jeans, cognac boots</dd></div>
+    <div><dt>Look 05</dt><dd>Burgundy fringe suede jacket and skirt, layered denim jacket, ivory boots</dd></div>
+    <div><dt>Look 06</dt><dd>Chambray shirt, cuffed jeans, squash blossom necklace, concho belt, red boots</dd></div>
+  </dl>`)}
+  ${reflection(p.id)}${next(p.id)}`; };
+
+/* Styling: Kerr Chief */
+PAGES['kerr-chief'] = () => { const p = byId['kerr-chief']; return `
+  ${head(p)}
+  <section class="wrap" style="padding-bottom:clamp(40px,6vw,80px)"><div class="asym">
+    <div class="a1">${img('Arrowhead silk scarf worn as a belted shawl',SCARF,'b','',I('kerr-chief-full'))}</div>
+    <div class="a2">${img('Detail: belted shawl with neck scarf underneath',SCARF,'a','',I('kerr-chief-detail'))}<p class="cap">Two scarves in one look: a belted shawl over a tied neck scarf</p></div>
+  </div></section>
+  <section class="sec wrap"><div class="statband">
+    <div><div class="bignum">40+</div><p class="eyebrow" style="margin-top:18px">Scarves styled</p></div>
+    <p class="lede">During my CHIEFFALO Americana internship, I created multiple looks for Kerr Chief and styled more than 40 scarves, developing new ways to wear each one so the print stayed the hero of every frame.</p>
+  </div></section>
+  ${block('My role', roleList(['Created multiple looks','Styled outfits','Developed unique scarf styling techniques','Selected accessories','Helped execute the visual direction','Assisted on the photoshoot']))}
+  <section class="sec wrap"><p class="eyebrow">Behind the scenes</p><h2 style="margin-bottom:40px">On <em>set</em></h2>
+    <div class="quad">
+      <figure style="margin:0">${vid('Styling a model on set','9/16',V('kerr-chief-on-set'),I('kerr-chief-on-set-poster'))}<figcaption>Final adjustments before the shot</figcaption></figure>
+      <figure style="margin:0">${vid('Layering a scarf under denim and a statement jacket','9/16',V('kerr-chief-layering'),I('kerr-chief-layering-poster'))}<figcaption>Layering a scarf under denim</figcaption></figure>
+      <figure style="margin:0">${img('Pulling looks from the wardrobe rack','9/16','b','',I('kerr-chief-rack'))}<figcaption>Pulling looks from the rack</figcaption></figure>
+      <figure style="margin:0">${img('Production binder listing the styling team','9/16','a','',I('kerr-chief-callsheet'),'center 70%')}<figcaption>The production binder, styling team included</figcaption></figure>
+    </div>
+  </section>
+  <section class="sec wrap"><p class="eyebrow">Technique index</p><h2 style="margin-bottom:40px">One scarf, <em>many ways</em></h2>
+    <div class="trio">
+      <figure style="margin:0">${img('Belted shawl',SCARF,'b','',I('kerr-chief-full'),'center 30%')}<figcaption>Belted shawl · draped over the shoulders, cinched with a western buckle</figcaption></figure>
+      <figure style="margin:0">${img('Layered neck tie',SCARF,'a','',I('kerr-chief-detail'),'center 15%')}<figcaption>Layered neck tie · a second print knotted under the collar</figcaption></figure>
+      <figure style="margin:0">${img('Menswear neckerchief',MEN,'c','',I('kerr-chief-menswear'))}<figcaption>Neckerchief · knotted over chambray and denim</figcaption></figure>
+    </div>
+  </section>
+  ${reflection(p.id)}${next(p.id)}`; };
+
+/* Event: Runway for a Cure */
+PAGES['runway'] = () => { const p = byId['runway']; return `
+  ${head(p)}
+  <section class="wrap" style="padding-bottom:clamp(40px,6vw,80px)"><div class="profile">
+    <figure style="margin:0">${img('Zohie at the runway before the show','3/4','d','',I('runway-zohie'))}<figcaption>At the runway before doors opened</figcaption></figure>
+    <div><p class="eyebrow">Overview</p><p class="lede">Runway for a Cure took place at the National Cowgirl Museum and Hall of Fame. Through CHIEFFALO Americana, I coordinated the runway production from planning to the final walk.</p>
+      <div class="stats real" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:32px"><div><b>15</b><span>Models</span></div><div><b>19</b><span>Brands &amp; retailers</span></div></div></div>
+  </div></section>
+  <section class="sec wrap"><div class="split" style="padding-top:20px"><p class="eyebrow">My role</p><div>
+    <ol class="steps">
+      <li><b>Planning</b><p>Worked with event planners and 19 brands and retailers; planned the styled looks.</p></li>
+      <li><b>Fittings</b><p>Scheduled and managed fittings and the transit of looks.</p></li>
+      <li><b>Backstage</b><p>Organized models, ran backstage operations, and did final outfit checks.</p></li>
+      <li><b>Show</b><p>Cued all 15 models down the runway.</p></li>
+    </ol>
+  </div></div></section>
+  <section class="sec wrap"><p class="eyebrow">Runway</p><div class="asym">
+    <div class="a1">${img('Model walking in a fringed suede jacket','9/16','d','',I('runway-walk-01'),'center 40%')}<p class="cap">Fringed suede on the runway</p></div>
+    <div class="a2">${img('Model heading out to the runway','9/16','c','',I('runway-walk-02'))}<p class="cap">Sending a look out from the curtain</p></div>
+  </div></section>
+  <section class="sec tight wrap"><p class="eyebrow">Backstage</p><h2 style="margin-bottom:40px">Behind <em>the curtain</em></h2>
+    <div class="quad">
+      <figure style="margin:0">${img('Checking garment bags on the rack','9/16','a','',I('runway-rack'))}<figcaption>Checking looks on the rack</figcaption></figure>
+      <figure style="margin:0">${img('Adjusting a bolo tie on a model','9/16','b','',I('runway-bolo'))}<figcaption>Last adjustments before the walk</figcaption></figure>
+      <figure style="margin:0">${img('Models lined up in running order','9/16','a','',I('runway-lineup'))}<figcaption>Models lined up in running order</figcaption></figure>
+      <figure style="margin:0">${img('Sponsor thank-you board','9/16','c','',I('runway-sponsors'))}<figcaption>The show’s sponsor board</figcaption></figure>
+    </div>
+  </section>
+  ${reflection(p.id)}${next(p.id)}`; };
+
+/* Marketing: For Love & Lemons */
+PAGES['for-love-lemons'] = () => { const p = byId['for-love-lemons'];
+  const ch = [['fll-brand','Brand'],['fll-brief','Creative brief'],['fll-funnel','Funnel'],['fll-budget','Budget'],['fll-decks','From the deck']];
+  const funnel = [
+    ['Awareness','TikTok','TopView ad, 15-second video','May 13–15','$210,000','30%','Impressions, reach, engagement','A model trying on the summer romance collection introduces the campaign. 54% of TikTok users are female, and TopView gives maximum visibility.'],
+    ['Consideration','Instagram','24-hour placement, posted daily','May 16–25','$85,000','12%','Click-through rate, engagement rate','A visually engaging image of the collection with a direct link to the site, aimed at women 18–30 who shop online and engage often on Instagram.'],
+    ['Conversion','Pinterest','Shopping pin ad','June 2–9','$115,000','16%','Website referral traffic, conversion rate','A summer dress in the romantic aesthetic. Shopping ads pull from the brand catalog, and 85% of weekly Pinterest users have bought based on brand pins.'],
+  ];
+  const max = 210000;
+  return `
+  ${head(p)}
+  <div class="wrap"><div class="chapters">${ch.map(([id,l])=>`<button type="button" data-scroll="${id}">${l}</button>`).join('')}</div></div>
+  <section class="sec wrap"><p class="eyebrow">Campaign concept</p>
+    <p class="tagline" style="color:var(--ink)">Warm, playful <em style="color:var(--accent)">femininity.</em></p>
+    <div class="body" style="margin-top:32px"><p>A four-week Spring/Summer paid social campaign that moves shoppers from TikTok discovery to Instagram consideration to Pinterest purchase, positioning For Love &amp; Lemons as the go-to brand for romantic style.</p></div>
+  </section>
+  <section class="sec tight wrap" id="fll-brand"><div class="profile">
+    ${slide(I('fll-intro'),'Brand introduction slide')}
+    <div><p class="eyebrow">The brand</p><h2 style="margin-bottom:24px">“Inspire the most romantic <em>version of yourself”</em></h2>
+      <ul class="ticks"><li>Romantic, feminine brand founded in 2010</li><li>Dresses and lingerie focus</li><li>Omnichannel: e-commerce plus retail partners</li><li>Strong social presence on Instagram, TikTok, and Pinterest</li></ul></div>
+  </div></section>
+  <section class="sec tight wrap" id="fll-brief">
+    ${slide(I('fll-brief'),'For Love & Lemons creative brief slide','Creative brief')}
+    <dl class="facts" style="margin-top:40px">
+      <div><dt>Flight</dt><dd>May 12 – June 9</dd></div>
+      <div><dt>Objective</dt><dd>Drive conversions</dd></div>
+      <div><dt>Budget</dt><dd>$700K + $100–150K incremental</dd></div>
+      <div><dt>Products</dt><dd>Dresses, lingerie-inspired pieces, occasion wear</dd></div>
+      <div><dt>Creative</dt><dd>Statics (dress, set, accessory), 15s teaser, 30s lifestyle video</dd></div>
+      <div><dt>Target</dt><dd>Women 20–38, household income $75K+, urban and coastal markets</dd></div>
+    </dl>
+  </section>
+  <section class="sec wrap" id="fll-funnel"><p class="eyebrow">Channel strategy</p><h2 style="margin-bottom:40px">One channel per <em>funnel stage</em></h2>
+    <ol class="funnel">${funnel.map(([stage,ch,fmt,dates,amt,pct,kpi,why],i)=>`
+      <li style="--w:${100-i*14}%"><div class="f-band"><span>${stage}</span><b>${ch}</b></div>
+        <div class="f-body"><p class="f-meta">${fmt} · ${dates}</p><p>${why}</p><p class="f-kpi"><span>KPIs</span>${kpi}</p></div></li>`).join('')}
+    </ol>
+  </section>
+  <section class="sec wrap" id="fll-budget"><div class="split" style="padding-top:20px"><p class="eyebrow">Paid social budget</p><div>
+    <div class="money">${[...funnel].sort((a,b)=>parseInt(b[4].replace(/\D/g,''))-parseInt(a[4].replace(/\D/g,''))).map(f=>{const v=parseInt(f[4].replace(/\D/g,''));return `
+      <div class="m-row"><span>${f[1]}</span><i><em style="width:${v/max*100}%"></em></i><b>${f[4]}</b><small>${f[5]} of budget</small></div>`}).join('')}
+    </div>
+    <p class="cap" style="margin-top:18px">$410,000 across the three platforms, 58% of the $700K base budget</p>
+  </div></div></section>
+  <section class="sec wrap" id="fll-decks"><p class="eyebrow">From the deck</p>
+    <div class="duo">
+      ${slide(I('fll-tiktok-ad'),'Ad placement 3: TikTok slide','Ad placement · TikTok')}
+      ${slide(I('fll-instagram-ad'),'Ad placement: Instagram slide','Ad placement · Instagram')}
+      ${slide(I('fll-pinterest'),'Ad placement 1: Pinterest slide','Ad placement · Pinterest')}
+      ${slide(I('fll-pinterest-budget'),'Budget and metrics: Pinterest slide','Budget & metrics · Pinterest')}
+    </div>
+  </section>
+  ${next(p.id)}`; };
+
+/* Marketing: GANNI */
+const influencer = (handle, src, alt, stats, points, role) => `
+  <div class="infl">
+    ${slide(src, alt)}
+    <div><p class="handle">${handle}</p>
+      <div class="stats real" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:24px">${stats.map(([b,s])=>`<div><b style="font-size:clamp(1.7rem,3vw,2.4rem)">${b}</b><span>${s}</span></div>`).join('')}</div>
+      <ul class="ticks">${points.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <p class="eyebrow" style="margin:22px 0 6px">Role in campaign</p><p>${role}</p></div>
+  </div>`;
+PAGES['ganni'] = () => { const p = byId['ganni']; return `
+  ${head(p)}
+  ${slide(I('ganni-cover'),'GANNI influencer project cover slide')}
+  ${block('Overview', `<p class="lede">An influencer strategy for GANNI that pairs two mid-tier New York creators to grow the #GANNIGIRLS community through authentic, everyday styling.</p>`)}
+  <section class="sec tight wrap"><div class="profile">
+    ${slide(I('ganni-overview'),'Brand overview slide')}
+    <div><p class="eyebrow">Brand overview</p><h2 style="margin-bottom:24px">#GANNIGIRLS are <em>the key</em></h2>
+      <ul class="ticks"><li>Not chasing perfection, but constant improvement</li><li>High-quality pieces that express individuality without the high price tag</li></ul></div>
+  </div></section>
+  <section class="sec tight wrap"><div class="profile">
+    ${slide(I('ganni-consumer'),'Target consumer slide')}
+    <div><p class="eyebrow">Target consumer</p><h2 style="margin-bottom:24px">Gen Z and <em>young millennials</em></h2>
+      <ul class="ticks"><li>Trend-focused</li><li>Self-expressive</li><li>Sustainability-conscious</li></ul></div>
+  </div></section>
+  <section class="sec wrap"><p class="eyebrow">Influencer profiles</p><div style="display:grid;gap:clamp(48px,7vw,96px)">
+    ${influencer('@daniellepheloung', I('ganni-danielle'), 'Danielle Pheloung influencer profile slide',
+      [['378K','Instagram followers'],['724','Posts']],
+      ['Mid-tier influencer based in NYC','“Get dressed with me” outfit styling','Lifestyle and day-in-the-life videos','Est. $54.9K–$75.2K yearly Instagram earnings'],
+      'Day-in-the-life content styling GANNI pieces from work looks to going-out looks.')}
+    ${influencer('@hannahlizzy_', I('ganni-hannah'), 'Hannah Lizzy influencer profile slide',
+      [['353.2K','TikTok followers'],['141K','Instagram followers']],
+      ['Mid-tier influencer based in NYC; 28.1M TikTok likes','Styling videos, fashion reviews, and OOTDs','TikTok pricing est. $460–720','Instagram est. $750–1K per post, $990–1.4K per reel'],
+      'Styling posts showing how she pairs GANNI pieces with items she already owns.')}
+  </div></section>
+  <section class="sec wrap"><p class="eyebrow">Campaign concept</p>
+    <p class="tagline" style="color:var(--ink)">Join the <em style="color:var(--accent)">#GANNIGIRLS</em></p>
+    <div class="split" style="margin-top:48px;padding-top:20px"><p class="eyebrow">The idea</p>
+      <ul class="ticks"><li>Highlights the individuality and community behind GANNI</li><li>Invites each creator’s followers to join the #GANNIGIRLS movement</li><li>Content stays authentic to each creator’s usual style</li><li>Promotes self-expression, versatility, and community participation</li></ul></div>
+  </section>
+  <section class="sec wrap"><p class="eyebrow">Trend integration</p><h2 style="margin-bottom:36px">Two content <em>formats</em></h2>
+    <div class="duo cols">
+      <div><h3>GRWM / day in the life</h3><p class="cap" style="margin:6px 0 14px">Danielle Pheloung</p><ul class="ticks"><li>Styles GANNI pieces for everyday moments</li><li>Shows outfits for work, daily life, and going out</li><li>Relatable, authentic content for viewers</li></ul></div>
+      <div><h3>UGC-style content</h3><p class="cap" style="margin:6px 0 14px">Hannah Lizzy</p><ul class="ticks"><li>Casual, unpolished styling videos</li><li>Mixes GANNI with other brands for realistic styling</li><li>Invites followers to post with #GANNIGIRLS / #JOINGANNIGIRLS</li></ul></div>
+    </div>
+  </section>
+  <section class="sec wrap"><p class="eyebrow">KPIs</p><h2 style="margin-bottom:36px">How success <em>is measured</em></h2>
+    <div class="stats real three">
+      <div><b>~4%</b><span>Engagement rate</span><small>Within 30 days, counting likes, comments, shares, and saves</small></div>
+      <div><b>1,500+</b><span>Hashtag posts</span><small>#GANNIGIRLS posts in two months, building user-generated content</small></div>
+      <div><b>85%+</b><span>Positive sentiment</span><small>Share of positive comments during the campaign</small></div>
+    </div>
+  </section>
+  <section class="sec tight wrap"><div class="profile">
+    ${slide(I('ganni-digital'),'Digital merchandising analysis slide')}
+    <div><p class="eyebrow">Digital merchandising analysis</p><h2 style="margin-bottom:24px">The site, <em>reviewed</em></h2>
+      <ul class="ticks"><li>Easy to navigate, tech-savvy or not</li><li>Clear tabs and drop-downs</li><li>Questions answered quickly through links or chat</li><li>Gap: influencer campaigns aren’t featured on the site</li></ul></div>
+  </div></section>
+  <section class="sec tight wrap"><p class="eyebrow">From the deck</p>
+    <div class="duo">${slide(I('ganni-campaign'),'Campaign idea slide','Campaign idea')}${slide(I('ganni-trend'),'Trend integration slide','Trend integration')}</div>
+  </section>
+  ${next(p.id)}`; };
+
+/* Product: J.Crew interview assessment */
+PAGES['j-crew'] = () => { const p = byId['j-crew']; return `
+  ${head(p)}
+  ${block('Recommendation', `<p class="lede">J.Crew should adopt the Western/Americana trend through its core and hero pieces.</p>`)}
+  <section class="sec tight wrap">${slide(I('jcrew-recommendation'),'J.Crew recommendation slide')}</section>
+  ${block('Where it shows up', roleList(['Photoshoot location','Styling','Prints','Product features']))}
+  <section class="sec wrap"><div class="profile">
+    ${slide(I('jcrew-fit'),'Customer and brand fit slide')}
+    <div><p class="eyebrow">Customer &amp; brand fit</p><h2 style="margin-bottom:24px">Honor the customer <em>and the brand</em></h2>
+      <dl class="looks" style="grid-template-columns:minmax(0,1fr)">
+        <div><dt>Consumer</dt><dd>“Puts style first” and multi-generational</dd></div>
+        <div><dt>Brand</dt><dd>“Timeless” creativity while honoring heritage</dd></div>
+        <div><dt>The fit</dt><dd>Vintage and new iterations: a trend-forward customer meets timeliness and creativity</dd></div>
+      </dl></div>
+  </div></section>
+  <section class="sec wrap"><div class="split" style="padding-top:20px"><p class="eyebrow">Evidence &amp; timing</p><div style="display:grid;gap:32px">
+    <ul class="ticks">
+      <li>Western/Americana looks appeared on the runway for F/W 26 and S/S 27: bandana prints, western belts, and riding boots.</li>
+      <li>The trend is rising toward its peak, since it appears in the current season and in S/S 26.</li>
+      <li>Timing matters to meet consumer needs and stay relevant and profitable.</li>
+    </ul>
+    ${slide(I('jcrew-evidence'),'Evidence and timing slide','Source: WGSN Fashion Feed')}
+  </div></div></section>
+  <section class="sec wrap"><p class="eyebrow">Proposed action</p><h2 style="margin-bottom:36px">Hero pieces <em>and price points</em></h2>
+    <div class="tbl-wrap"><table><thead><tr><th>Category</th><th>Product</th><th>Retail</th></tr></thead><tbody>
+      <tr><td>Outerwear</td><td>Classic barn or jean jacket with added embellishments</td><td>$250–300</td></tr>
+      <tr><td>Shirting</td><td>Classic button-down</td><td>$120–160</td></tr>
+      <tr><td>Knitwear</td><td>Cashmere</td><td>$150–250</td></tr>
+    </tbody></table></div>
+    <div style="margin-top:40px">${slide(I('jcrew-action'),'Proposed action slide')}</div>
+  </section>
+  ${next(p.id)}`; };
+
+/* Retail: J.Crew field survey */
+PAGES['jcrew-field'] = () => { const p = byId['jcrew-field']; return `
+  ${head(p)}
+  ${slide(I('jfs-01'),'J.Crew field survey cover slide')}
+  ${block('Overview', `<p class="lede">A field study of the J.Crew store at University Park Village in Fort Worth, looking at how the store’s sights, sounds, layout, and service shape what shoppers feel and do.</p>
+    <p class="cap" style="margin-top:18px">Store visited Wednesday, September 9, 6:00 pm</p>`)}
+  <section class="sec wrap"><p class="eyebrow">Overall store experience</p>
+    <dl class="facts" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+      <div><dt>First impression</dt><dd>Clean, polished, and inviting</dd></div>
+      <div><dt>Sales associates</dt><dd>Greeted customers, attentive without being overwhelming</dd></div>
+      <div><dt>Atmosphere</dt><dd>Relaxed, bright, and upscale with a preppy feel</dd></div>
+      <div><dt>Distinctive feature</dt><dd>Curated, lifestyle-focused presentation</dd></div>
+    </dl>
+    <dl class="facts" style="grid-template-columns:repeat(4,minmax(0,1fr));border-top:0">
+      <div><dt>Sound</dt><dd>Low-volume background music</dd></div>
+      <div><dt>Smell</dt><dd>No strong signature scent</dd></div>
+      <div><dt>Lighting</dt><dd>Warm</dd></div>
+      <div><dt>Technology</dt><dd>Limited</dd></div>
+    </dl>
+    <div style="margin-top:40px">${slide(I('jfs-05'),'Overall store experience slide')}</div>
+  </section>
+  <section class="sec wrap"><p class="eyebrow">Stimulus → Organism → Response</p><h2 style="margin-bottom:36px">Three <em>S-O-R</em> models</h2>
+    <div class="tbl-wrap"><table><thead><tr><th>Model</th><th>Stimulus</th><th>Organism</th><th>Response</th></tr></thead><tbody>
+      <tr><td>01 · Visual merchandising</td><td>Minimal, spacious suit section; fuller, more colorful casual section</td><td>Suits feel sophisticated and exclusive; casual feels relaxed and approachable</td><td>More browsing time in casual; more focused, intentional suit purchases</td></tr>
+      <tr><td>02 · Touch &amp; quality</td><td>Open displays where shoppers touch and compare materials</td><td>Builds confidence and reinforces brand image</td><td>More likely to try on and buy; longer browsing</td></tr>
+      <tr><td>03 · Layout &amp; service</td><td>Open layout, grouped merchandise, associates present</td><td>Comfort and accessibility in the store and with staff</td><td>Longer visits, more exploration and confidence</td></tr>
+    </tbody></table></div>
+    <div class="trio" style="margin-top:40px">${slide(I('jfs-09'),'S-O-R visual merchandising slide')}${slide(I('jfs-10'),'S-O-R touch and product quality slide')}${slide(I('jfs-11'),'S-O-R layout and customer service slide')}</div>
+  </section>
+  <section class="sec wrap"><div class="split" style="padding-top:20px"><p class="eyebrow">How it works together</p><div>
+    <ol class="path">${['Browse','Touch','Try on','Purchase'].map(s=>`<li>${s}</li>`).join('')}</ol>
+    <p class="body" style="margin-top:22px">Visual merchandising draws attention and gives style ideas, touch builds a sense of value and craftsmanship, and layout and service make shopping easier. Together they create comfort, inspiration, and perceived quality.</p>
+  </div></div></section>
+  <section class="sec tight wrap"><div class="duo">${slide(I('jfs-06'),'Sight: visual environment slide','Organized vs. disorganized displays')}${slide(I('jfs-13'),'Physical store vs. online brand image slide','Store vs. online brand image')}</div></section>
+  <section class="sec wrap"><div class="split" style="padding-top:20px"><p class="eyebrow">Recommendations</p>
+    <ol class="recs">
+      <li><div><h3>Incorporate more brand storytelling</h3><p class="body" style="margin-top:6px">Add subtle signs or editorial displays about J.Crew’s heritage, which shoppers may not know. Expected effect: stronger authenticity and better understanding of price points.</p></div></li>
+      <li><div><h3>Connect online and in-store shopping</h3><p class="body" style="margin-top:6px">Make online ordering, store pickup, and finding unavailable sizes or colors highly visible and easy. Expected effect: less frustration and fewer lost purchases.</p></div></li>
+      <li><div><h3>Build a distinctive multisensory identity</h3><p class="body" style="margin-top:6px">Add a subtle signature scent or another consistent sensory element. Expected effect: stronger emotional associations, brand recall, and differentiation.</p></div></li>
+    </ol>
+  </div></section>
+  ${next(p.id)}`; };
+
+/* Graphic design */
+PAGES['graphic-design'] = () => { const p = byId['graphic-design'];
+  const projs=[
+    {title:'Handbag Project', tool:'Adobe Illustrator', ratio:'1/1', full:'gd-handbag', c1:'gd-handbag-crop1', c2:'gd-handbag-crop2',
+     desc:'One handbag silhouette developed in three exotic prints, zebra, python, and tiger, each drawn in front, side, and back views like a product line sheet.',
+     tags:['Product design','Print & pattern','Colorways']},
+    {title:'What Happens in Vegas', tool:'Adobe Illustrator', ratio:'1165/1800', full:'gd-vegas', c1:'gd-vegas-crop1', c2:'gd-vegas-crop2',
+     desc:'A vintage-inspired poster of a showgirl kicking up from a champagne coupe, set against a gold bubble field with arched type.',
+     tags:['Illustration','Typography','Poster design']},
+    {title:'Welcome to Texas', tool:'Adobe Illustrator', ratio:'1391/1800', full:'gd-texas', c1:'gd-texas-crop1', c2:'gd-texas-crop2',
+     desc:'A single-line fashion illustration of a figure in a printed corset with a structured bag, drawn in black line on pink.',
+     tags:['Fashion illustration','Line work','Vector']},
+    {title:'Wedding Invitation Suite', tool:'Adobe InDesign',
+     desc:'A five-piece wedding stationery suite for a ceremony at Chateau de La Motte: invitation, save the date, envelope, RSVP card, and mailer. Hand-drawn swans, peonies, and a pair of heart lockets carry through every piece, set in a soft peach and blush palette with script and serif type.',
+     tags:['Layout','Typography','Print collateral'],
+     custom:`<div class="suite">
+       <div class="duo">${img('Invitation','1063/1530','a','',I('gd-invite'))}${img('Save the date','1063/1530','a','',I('gd-savethedate'))}</div>
+       <div class="suite-row">
+         <figure style="margin:0;flex:1105">${img('Envelope','1105/808','a','',I('gd-envelope'))}<figcaption>Envelope</figcaption></figure>
+         <figure style="margin:0;flex:935">${img('RSVP card','935/680','a','',I('gd-rsvp'))}<figcaption>RSVP card</figcaption></figure>
+         <figure style="margin:0;flex:978">${img('Mailer','978/744','a','',I('gd-mailer'))}<figcaption>Mailer</figcaption></figure>
+       </div></div>`},
+  ];
+  return `
+  ${head(p)}
+  ${block('Overview', `<p class="lede">Design work from my graphic design coursework in Illustrator and InDesign, shown project by project with full pieces and close crops so the line work, type, and detail read clearly.</p>`)}
+  ${projs.map(x=>`
+  <section class="sec wrap"><div class="prog">
+    <div><h2><small>${x.tool}</small>${x.title}</h2>
+      <p class="body" style="margin-top:16px">${x.desc}</p>
+      <div class="tags">${x.tags.map(t=>`<span>${t}</span>`).join('')}</div></div>
+    ${x.custom || `<div class="prog-imgs">${img(x.title+' · full piece',x.ratio,'a','full',I(x.full))}${img(x.title+' · detail','1/1','a','',I(x.c1))}${img(x.title+' · detail','1/1','a','',I(x.c2))}</div>`}
+  </div></section>`).join('')}
+  ${next(p.id)}`; };
+
+PAGES.about = () => `
+  <header class="page-head wrap"><p class="eyebrow">About</p><h1>Hello, <em style="color:var(--accent)">I’m Zohie.</em></h1></header>
+  <section class="wrap" style="padding-bottom:clamp(64px,9vw,128px)"><div class="about">
+    ${img('Zohie Lopez','1069/1600','b','',I('about-portrait'))}
+    <div class="cv">
+      <div class="body"><p class="lede" style="color:var(--ink);margin-bottom:22px">I’m a Fashion Merchandising student at TCU who works where styling meets strategy.</p>
+        <p>I style and sell at CHIEFFALO Americana in Fort Worth, where I’ve styled photoshoots for CITY Boots and Kerr Chief and produced a runway show with 15 models and 19 brands. In class I build marketing, influencer, and trend plans for brands I admire. I’m looking for a Summer 2027 internship in styling, product, or marketing.</p></div>
+      <div class="cv-row"><p class="eyebrow">Education</p><ul>
+        <li><b>Texas Christian University</b>, College of Fine Arts</li>
+        <li>B.S. Fashion Merchandising · General Business minor · Expected May 2028</li>
+        <li>Dean’s Honor List</li></ul></div>
+      <div class="cv-row"><p class="eyebrow">Experience</p><ul class="jobs">
+        <li><b>CHIEFFALO Americana</b> · Fort Worth<span>Stylist and Sales Associate · Jan 2026 – present</span>
+          <p>Lead the team in sales through tailored styling. Coordinated runway production for 15 models with 19 brands and retailers: fittings, transit of looks, backstage, final checks, and cueing.</p></li>
+        <li><b>CHIEFFALO Americana</b> · Fort Worth<span>Styling, Digital &amp; Visual Merchandising Intern · May – Jul 2026</span>
+          <p>Rewrote product descriptions, standardized product imagery, and built a merchandising plan. Styled and helped execute photoshoots for CITY Boots and Kerr Chief.</p></li>
+        <li><b>IPEC Las Vegas</b> · Las Vegas<span>Seasonal Event Assistant · Jan 2022 – Jun 2026</span>
+          <p>Ran on-site operations and guest check-in for events of nearly 2,000 attendees, including the Las Vegas School Choice Fair.</p></li>
+      </ul></div>
+      <div class="cv-row"><p class="eyebrow">Leadership</p><ul class="jobs">
+        <li><b>National Retail Federation Student Association</b><span>Vice President · May 2026 – present</span>
+          <p>Organize meetings for 200+ members around philanthropy, creative expression, and DFW networking; oversee social media with a 13-person board.</p></li>
+        <li><b>Delta Gamma</b><span>Director of Work Week · Jul – Dec 2026</span>
+          <p>Created Work Week themes and social content that reached 300K+ views; coordinated committees across the chapter.</p></li>
+      </ul></div>
+      <div class="cv-row"><p class="eyebrow">Projects</p><ul class="jobs">
+        <li><b>NASA · TCC Wearables Challenge</b><span>Presenter · April 2026</span>
+          <p>Researched solutions for astronauts’ impaired vision while driving lunar rovers with NASA advisors, and presented findings to judges and industry professionals at Space Center Houston.</p></li>
+      </ul></div>
+      <div class="cv-row"><p class="eyebrow">Skills</p><ul><li>Adobe Photoshop · Illustrator · InDesign · Shopify · Canva · Microsoft Office</li><li>Inside LVMH Certificate</li></ul></div>
+      <div class="cv-row"><p class="eyebrow">Resume</p><ul><li><a href="Zohie-Lopez-Resume.pdf" target="_blank" rel="noopener">View resume (PDF)</a></li></ul></div>
+    </div>
+  </div></section>
+  <section class="sec wrap" style="border-top:1px solid var(--line)">
+    <div class="sel-head"><div><p class="eyebrow">Off duty</p><h2>Personal <em>style</em></h2></div>
+      <p class="body" style="max-width:38ch">How I dress when no one is paying me to: western details, texture, and a lot of boots.</p></div>
+    <div class="ps">${[1,2,3,4,5,6,7,8,9,10].map(n=>{const k='personal-'+String(n).padStart(2,'0');return `<figure>${img('Personal style '+n,'auto','b','ps-img',I(k))}</figure>`}).join('')}</div>
+  </section>`;
+
+PAGES.contact = () => `
+  <section class="wrap" style="padding-block:clamp(48px,8vw,112px)">
+    <p class="eyebrow">Contact</p>
+    <h1 class="contact-big">Let’s create <em>something.</em></h1>
+    <dl class="clist">
+      <div><dt>Email</dt><dd id="mail" style="user-select:all">${EMAIL}</dd><button type="button" class="copy" id="copy-mail">Copy</button></div>
+      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/zohie-lopez-a51249392" target="_blank" rel="noopener">linkedin.com/in/zohie-lopez</a></dd><span></span></div>
+      <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/zohie.lopez/" target="_blank" rel="noopener">@zohie.lopez</a></dd><span></span></div>
+      <div><dt>Resume</dt><dd><a href="Zohie-Lopez-Resume.pdf" target="_blank" rel="noopener">View resume (PDF)</a></dd><span></span></div>
+    </dl>
+  </section>`;
+
+/* ---------- router ---------- */
+const app = document.getElementById('app');
+function render(){
+  const key = (location.hash.slice(1) || 'home');
+  const fn = PAGES[key] || PAGES.home;
+  app.innerHTML = `<div class="page">${fn()}</div>`;
+  const section = ['home','about','contact'].includes(key) ? key : 'work';
+  document.querySelectorAll('[data-nav]').forEach(a => {
+    if (a.dataset.nav === section) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+  });
+  window.scrollTo({top:0});
+}
+app.addEventListener('click', e => {
+  const f = e.target.closest('[data-filter]');
+  if (f){ const y = window.scrollY; app.innerHTML = `<div class="page">${PAGES.work(f.dataset.filter)}</div>`; window.scrollTo({top:y}); return; }
+  const s = e.target.closest('[data-scroll]');
+  if (s){ document.getElementById(s.dataset.scroll)?.scrollIntoView({behavior:'smooth'}); return; }
+  if (e.target.id === 'copy-mail'){
+    const b = e.target;
+    const done = () => { b.textContent = 'Copied'; setTimeout(()=>b.textContent='Copy',1600); };
+    try { navigator.clipboard.writeText(EMAIL).then(done, () => selectMail()); } catch(_) { selectMail(); }
+  }
+});
+function selectMail(){ const r=document.createRange(); r.selectNodeContents(document.getElementById('mail')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+window.addEventListener('hashchange', render);
+render();
+</script>
+</body>
+</html>
